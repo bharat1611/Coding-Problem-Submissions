@@ -5,24 +5,16 @@ class Solution {
 public:
     bool isMonotonic(vector<int>& nums)
     {
-        int n = nums.size() - 1, i = 0;
-        bool f1 = true, f2 = true;
-        while(i < n)
+        int i = 0;
+        bool f1 = true, f2 = true;              // taking 2 counters as f1 and f2
+        for(int i = 0; i < nums.size() - 1; i++)        
         {
-            if(nums[i] > nums[i+1])
+            if(nums[i] > nums[i + 1])           // checking if the array is monotone increaasing
                 f1 = false;
-            i++;
-        }
-        while(n >= 1)
-        {
-            if(nums[n -1] < nums[n])
+            if(nums[i] < nums[i + 1])           // checking if array is monotone decreasing
                 f2 = false;
-            n--;
         }
-        if(f1 || f2)
-            return true;
-        
-        return false;
+        return f1 || f2;                    // if both f1 and f2 are false, means neither M.inc nor M.decreaing
         
     }
 };
