@@ -15,6 +15,7 @@ void insert(node** head, int num)
     p -> next = (*head);
     (*head) = p;
 }
+
 void display(node *head)
 {
     node *ptr = head;
@@ -24,6 +25,39 @@ void display(node *head)
         ptr = ptr -> next;
     }
 }
+
+void palindrome(node *head)
+{
+    node *org = head;
+    node *prev = NULL, *curr = head, *nxt = NULL;
+    int flag = 0;
+    while(curr != NULL)
+    {
+        nxt = curr -> next;
+        curr -> next = prev;
+        prev = curr;
+        curr = nxt;
+    }
+    cout<<endl;
+    display(prev);
+    cout<<endl;
+    display(org);
+    while(head != NULL)
+    {
+        if(head->val != prev-> val){
+            flag = 1;
+            break;
+        } 
+
+        head = head -> next;
+        prev = prev ->next;   
+    }
+    if(flag)
+    cout<<"Palindrome";
+    else
+    cout<<"Not Palindrome";
+}
+
 void reverse(node*);
 int main()
 {
@@ -35,4 +69,5 @@ int main()
         i++;
     }
     display(head);
+    palindrome(head);
 }
