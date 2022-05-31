@@ -17,4 +17,3 @@ public:
             return 0;
         return *max_element(v.begin(), v.end());
     }
-};
