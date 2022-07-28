@@ -13,9 +13,6 @@ public:
             j--;
         }
     }
-
-
-    
     void nextPermutation(vector<int>& nums) 
     {
         if(nums.size() == 1)                    //if size is 1 return 
