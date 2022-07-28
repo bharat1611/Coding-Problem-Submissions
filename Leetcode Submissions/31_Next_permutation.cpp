@@ -13,6 +13,8 @@ public:
             j--;
         }
     }
+
+
     
     void nextPermutation(vector<int>& nums) 
     {
