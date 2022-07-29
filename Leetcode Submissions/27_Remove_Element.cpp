@@ -6,6 +6,8 @@ class Solution {
 public:
     int removeElement(vector<int>& nums, int val) 
     {
+
+
         int n = nums.size();
         int count = 0;                         //to count the values to be removed
         for(int i = 0; i < n - count; i++)
