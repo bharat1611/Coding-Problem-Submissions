@@ -2,6 +2,7 @@ class Solution {
 public:
     int maxProfit(vector<int>& nums) 
     {
+
         int n = nums.size(), k = 0;
         vector<int> v;
         for(int i = 0 ; i < n - 1; i++)
