@@ -13,6 +13,7 @@
  
 class Solution {
 public:
+
     ListNode* swapPairs(ListNode* head) {
         if (head == nullptr || head->next == nullptr) 
         {
