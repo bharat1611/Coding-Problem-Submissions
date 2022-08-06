@@ -6,7 +6,7 @@ public:
         
         if(s != t)
             return false;
-            
+     
         return true;
     }
 };
