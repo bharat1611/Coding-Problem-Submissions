@@ -2,7 +2,7 @@ class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
         
-        if(head != NULL && head -> val == val)
+        while(head != NULL && head -> val == val)
             head = head ->next;
         
         if(head == NULL)
@@ -19,6 +19,6 @@ public:
                 curr = curr -> next;
         }
         
-        return curr;
+        return head;
     }
 };
