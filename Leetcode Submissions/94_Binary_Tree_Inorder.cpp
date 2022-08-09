@@ -2,19 +2,21 @@
 using namespace std;
 class Solution {
 public:
-    vector<int> v;
-    void inorder(TreeNode *rt)
+    vector<int> inorder;
+    
+    void helper(TreeNode *root)
     {
-        if(rt == NULL) return;
+        if(root == NULL)
+            return;
         else
         {
-            inorder(rt -> left);
-            v.push_back(rt -> val);
-            inorder(rt -> right);
+            helper(root -> left);
+            inorder.push_back(root -> val);
+            helper(root -> right);
         }
     }
     vector<int> inorderTraversal(TreeNode* root) {
-        inorder(root);
-        return v;   
+        helper(root);
+        return inorder;
     }
 };
