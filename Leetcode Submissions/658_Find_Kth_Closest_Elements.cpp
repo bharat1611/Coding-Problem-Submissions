@@ -22,7 +22,6 @@ public:
             // cout << mp.top().first << " " << mp.top().second << endl;
             mp.pop();
         }
-        
         sort(v.begin(), v.end());
         return v;
     }
