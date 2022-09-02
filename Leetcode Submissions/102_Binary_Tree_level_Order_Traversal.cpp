@@ -25,3 +25,31 @@ public:
         return ans;
     }
 };
+
+
+class Solution {
+public:
+    vector<vector<int>> ans;
+    
+    void helper(TreeNode *root, int level)
+    {
+        if(ans.size() == level){
+            ans.push_back({root -> val});
+        }
+        else if(ans.size() > level)
+        {
+            ans[level].push_back(root -> val);
+        }
+        
+        if(root -> left)
+            helper(root -> left, level + 1);
+        if(root -> right)
+            helper(root -> right, level + 1);
+    }
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        if(root == NULL)
+            return {};
+        helper(root, 0);
+        return ans;
+    }
+};
