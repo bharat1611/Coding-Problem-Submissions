@@ -29,3 +29,32 @@ public:
         return ans;
     }
 };
+
+class Solution {
+public:
+    vector<pair<long, int>> v;
+    void helper(TreeNode *root, int level)
+    {
+        if(root == NULL)
+            return;
+        int a = root -> val;
+        if(v.size() <= level)
+            v.push_back({a, 1});
+        else
+        {
+            v[level].first += a;
+            v[level].second++;
+        }
+        helper(root -> left, level + 1);
+        helper(root -> right, level + 1);
+    }
+    vector<double> averageOfLevels(TreeNode* root) {
+        helper(root, 0);
+        vector<double> ans;
+        for(int i = 0 ; i < v.size(); i++)
+        {
+            ans.push_back((double)v[i].first/v[i].second);
+        }
+        return ans;
+    }
+};
