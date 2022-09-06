@@ -35,3 +35,23 @@ public:
         return max_sum;
     }
 };
+
+// class Solution {
+// public:
+//     int pairSum(ListNode* head) {
+//         vector<int> v;
+//         while(head)
+//         {
+//             v.push_back(head -> val);
+//             head = head -> next;
+//         }
+//         int left = 0, right = v.size() - 1;
+//         int ans = INT_MIN;
+//         while(left < right)
+//         {
+//             ans = max(ans, v[left] + v[right]);
+//             left++, right--;
+//         }
+//         return ans;
+//     }
+// };
