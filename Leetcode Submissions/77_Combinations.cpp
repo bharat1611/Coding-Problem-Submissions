@@ -17,7 +17,6 @@ public:
     }
     vector<vector<int>> combine(int n, int k) {
         vector<int> level;
-        
         combine(n, k, 1, level);
         return ans;        
         
