@@ -1,26 +1,26 @@
-// class Solution {
-// public:
-//     vector<int> findAnagrams(string s, string p) {
-//         if(p.length() > s.length())
-//             return {};
-//         vector<int> ans;
-//         sort(p.begin(), p.end());
-//         int gap = p.length();
-//         for(int i = 0 ; i < s.length() - gap + 1; i++)
-//         {
-//             string str = "";
-//             for(int j = i ; j < i + gap; j++)
-//                 str += s[j];
+class Solution {
+public:
+    vector<int> findAnagrams(string s, string p) {
+        if(p.length() > s.length())
+            return {};
+        vector<int> ans;
+        sort(p.begin(), p.end());
+        int gap = p.length();
+        for(int i = 0 ; i < s.length() - gap + 1; i++)
+        {
+            string str = "";
+            for(int j = i ; j < i + gap; j++)
+                str += s[j];
 
-//             cout << str << " " << endl;
-//             sort(str.begin(), str.end());
+            cout << str << " " << endl;
+            sort(str.begin(), str.end());
 
-//             if(str == p)
-//                 ans.push_back(i);
-//         }
-//         return ans;
-//     }
-// };
+            if(str == p)
+                ans.push_back(i);
+        }
+        return ans;
+    }
+};
 class Solution{
 public:
     vector<int> findAnagrams(string s, string p){
