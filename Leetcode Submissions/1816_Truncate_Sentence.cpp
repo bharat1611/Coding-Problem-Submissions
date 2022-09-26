@@ -15,7 +15,6 @@ public:
                 temp += ' ';
                 ans += temp;
                 temp = "";
-                
             }
             else
                 temp += s[i];
