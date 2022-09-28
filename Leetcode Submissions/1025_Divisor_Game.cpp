@@ -1,23 +1,24 @@
-// class Solution {
-// public:
-//     bool helper(int N)
-//     {
-//         if(N == 1)
-//             return 0;
-//         for(int i = 1 ; i < N; i++)
-//         {
-//             if(N % i == 0)
-//             {
-//                 if(helper(N - i) == 0)
-//                     return 1;
-//             }
-//         }
-//         return 0;
-//     }
-//     bool divisorGame(int n) {
-//         return helper(n);
-//     }
-// };
+TLE
+class Solution {
+public:
+    bool helper(int N)
+    {
+        if(N == 1)
+            return 0;
+        for(int i = 1 ; i < N; i++)
+        {
+            if(N % i == 0)
+            {
+                if(helper(N - i) == 0)
+                    return 1;
+            }
+        }
+        return 0;
+    }
+    bool divisorGame(int n) {
+        return helper(n);
+    }
+};
 
 class Solution {
 public:
@@ -42,5 +43,11 @@ public:
     bool divisorGame(int n) {
         dp.resize(1001, -1);
         return helper(n);
+    }
+};
+class Solution {
+public:
+    bool divisorGame(int n) {
+        return n% 2 == 0;
     }
 };
