@@ -26,3 +26,35 @@ public:
         
     }
 };
+
+class Solution {
+public:
+    set<vector<int>> ans;
+    void helper(vector<int>&nums, vector<int> level, int len, int ind)
+    {
+        if(ind <= len and level.size() >= 2)
+        {
+            ans.insert(level);
+        }
+        for(int i = ind; i < len; i++)
+        {
+            if(level.size() == 0 || level.back() <= nums[i])
+            {
+                level.push_back(nums[i]);
+                helper(nums, level, len, i + 1);
+                level.pop_back();
+            }
+        }
+    }
+    vector<vector<int>> findSubsequences(vector<int>& nums) {
+        vector<int> level;
+        helper(nums, level, nums.size(), 0);
+        vector<vector<int>> v;
+        for(auto i : ans)
+        {
+            v.push_back(i);
+        }
+        return v;
+        
+    }
+};
