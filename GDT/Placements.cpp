@@ -12,7 +12,6 @@ vector<int> OffersReceived(vector<int>v)
     }
     return temp;
 }
-
 int maximumOffer(vector<int> OfferedSal, vector<int> maxJobOffer, int minSalary, vector<int> companyHired, vector<int> companyOffered)
 {
     int temp = -1,  k= companyOffered.size();
