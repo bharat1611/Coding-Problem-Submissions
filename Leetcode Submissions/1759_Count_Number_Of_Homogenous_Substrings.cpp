@@ -22,3 +22,25 @@ public:
         return sum;
     }
 };
+
+class Solution {
+public:
+    int countHomogenous(string s) {
+        if(s.length() == 1)
+            return 1;
+        long sum = 0;
+        long count = 1;
+        for(int i = 1; i < s.length(); i++)
+        {
+            if(s[i] == s[i - 1])
+                count++;
+            else
+            {
+                sum += (count * (count + 1)/2)%1000000007;
+                count = 1;
+            }
+        }
+        sum += (count * (count + 1)/2)%1000000007;
+        return sum;
+    }
+};
