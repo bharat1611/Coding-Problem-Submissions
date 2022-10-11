@@ -36,6 +36,7 @@ int rangeSum(vector<int> &arr, vector<int> &blocks, int l, int r)
         sum += arr[i--];
     return sum;
 }
+
 int main()
 {
     size_t n, bs;
