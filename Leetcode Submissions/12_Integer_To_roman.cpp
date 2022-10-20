@@ -1,5 +1,4 @@
-class Solution
-{
+class Solution{
 public:
     string intToRoman(int num)
     {
@@ -11,6 +10,6 @@ public:
 
         string thousands[] = {"", "M", "MM", "MMM"};
 
-        return (thousands[n / 1000] + hundreds[(n % 1000) / 100] + tens[(n % 100) / 10] + units[n % 10]);
+        return (thousands[num / 1000] + hundreds[(num % 1000) / 100] + tens[(num % 100) / 10] + units[num % 10]);
     }
 };
