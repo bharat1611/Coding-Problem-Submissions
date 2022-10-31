@@ -1,7 +1,6 @@
 class Solution {
 public:
     bool isToeplitzMatrix(vector<vector<int>>& matrix) {
-        unordered_map<int, set<int>> mp;
         for(int i = 0 ; i < matrix.size() - 1; i++)
         {
             for(int j = 0 ; j < matrix[i].size() - 1; j++)
