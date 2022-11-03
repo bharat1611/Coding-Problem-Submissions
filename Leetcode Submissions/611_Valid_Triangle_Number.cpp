@@ -17,7 +17,6 @@ public:
                 else
                     i++;
             }
-            
         }
         return count;   
     }
