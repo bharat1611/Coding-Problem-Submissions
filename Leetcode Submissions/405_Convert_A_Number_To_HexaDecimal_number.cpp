@@ -9,10 +9,7 @@ public:
         while(n)
         {
             int carry = n%16;
-            if(carry >= 10)
-                ans += conv[carry];
-            else
-                ans += to_string(carry);
+            ans += conv[carry];
             n /= 16;
         }
         reverse(ans.begin(), ans.end());
