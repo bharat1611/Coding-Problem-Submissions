@@ -2,8 +2,6 @@
 
 // A Balanced Binary Tree is a binary tree in which at any node, the height of left subtree and right subtree is not greater than to 1.
 
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
