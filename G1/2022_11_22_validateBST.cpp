@@ -2,6 +2,7 @@
 
 // A BST is a bianry tree where for every node, each value on the left of the current node is less than itself, and on right of current node is greater than its value.
 
+// The easy approach to this problem is to do an inorder traversal of the tree and store it in an array. If that inorder traversal array is sorted, then the tree is a BST otherwise it is not a BST.
 #include <iostream>
 #include <climits>
 using namespace std;
