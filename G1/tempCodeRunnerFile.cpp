@@ -1,9 +1,2 @@
-
-void inorder(TreeNode *root)
-{
-    if(root == NULL)
-        return;
-    inorder(root -> left);
-    cout << root -> val << " " ;
-    inorder(root -> right);
-}
+    vector<int> nums = {1,1,2,3,5};
+    int n = nums.size();
