@@ -19,3 +19,16 @@ public:
         return *max_element(freq.begin(), freq.end());
     }
 };
+
+class Solution {
+public:
+    int mostWordsFound(vector<string>& sentences) {
+        int spaces = 0, ans = 0;
+        for(int i = 0 ; i < sentences.size(); i++)
+        {
+            spaces = count(sentences[i].begin(), sentences[i].end(), ' ');
+            ans = max(ans, spaces);
+        }
+        return ans + 1;
+    }
+};
