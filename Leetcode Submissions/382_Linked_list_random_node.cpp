@@ -26,8 +26,52 @@ public:
     }
 };
 
-/**
- * Your Solution object will be instantiated and called as such:
- * Solution* obj = new Solution(head);
- * int param_1 = obj->getRandom();
- */
+
+class Solution {
+public:
+    ListNode *h = NULL;
+    int len = 0;
+    
+    Solution(ListNode* head) {
+        h = head;
+        ListNode *temp = head;
+        while(temp)
+        {
+            len++;
+            temp = temp -> next;
+        }
+    }
+    
+    int getRandom() {
+        int ran = rand() % len;
+        ListNode *temp = h;
+        for(int i = 0 ; i < ran; i++)
+        {
+            temp = temp -> next;
+        }
+        return temp -> val;
+    }
+};
+
+class Solution{
+public:
+    ListNode *head = NULL;
+
+    Solution(ListNode *h){
+        head = h;
+    }
+    
+    int getRandom(){
+        ListNode *curr = head;
+        ListNode *res;
+        int n = 1;
+        while (curr)
+        {
+            if (rand() % n == 0)
+                res = curr;
+            curr = curr->next;
+            n++;
+        }
+        return res->val;
+    }
+};
