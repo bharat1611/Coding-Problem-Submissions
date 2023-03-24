@@ -23,3 +23,20 @@ public:
         return true;               // true if sorted   
     }
 };
+
+
+class Solution {
+public:
+    bool isBST(TreeNode* root, long low, long high)
+    {   
+        if(root == NULL)
+            return true;
+        if(root -> val <= low or root -> val >= high)
+            return false;
+        return isBST(root-> left, low, root-> val) and isBST(root -> right, root -> val, high);
+    }
+    bool isValidBST(TreeNode* root) {
+
+        return isBST(root, LONG_MIN, LONG_MAX);
+    }
+};
