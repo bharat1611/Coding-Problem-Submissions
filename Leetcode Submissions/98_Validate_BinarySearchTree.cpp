@@ -36,7 +36,9 @@ public:
         return isBST(root-> left, low, root-> val) and isBST(root -> right, root -> val, high);
     }
     bool isValidBST(TreeNode* root) {
-
-        return isBST(root, LONG_MIN, LONG_MAX);
+        if(root == NULL)
+            return true;
+          
+        return isBST(root -> left, LONG_MIN, root -> val) and isBST(root -> right, root -> val, LONG_MAX);
     }
 };
