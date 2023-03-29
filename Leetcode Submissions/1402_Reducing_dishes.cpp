@@ -1,8 +1,18 @@
-
 class Solution {
 public:
+    // Recursion - TLE
+    int solveMem(vector<int> &s, int index, int time)
+    {
+        if(index >= s.size())
+            return 0;
+        int include = s[index] * time + solve(s, index + 1, time + 1);
+        int exclude = solve(s, index + 1, time);
+        return max(include, exclude);
+    }
     
-    int solve(vector<int> &s, int index, int time, vector<vector<int>> &dp)
+    // Memoisation - Accepted
+    
+    int solveMem(vector<int> &s, int index, int time, vector<vector<int>> &dp)
     {
         if(index >= s.size())
             return 0;
@@ -14,11 +24,15 @@ public:
         return dp[index][time];
         
     }
+    
+    int solveTab(vector<int> &s)
+    {
+        
+    }
     int maxSatisfaction(vector<int>& satisfaction) {
-        
-        
         sort(satisfaction.begin(), satisfaction.end());
+        // return solve(satisfaction, 0, 1);
         vector<vector<int>> dp(501, vector<int>(501, -1));
-        return solve(satisfaction, 0, 1, dp);
+        return solveMem(satisfaction, 0, 1, dp);
     }
 };
