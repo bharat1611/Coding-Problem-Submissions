@@ -62,6 +62,5 @@ public:
             area = max(area, l*b);
         }
         return area;
-        
     }
 };
