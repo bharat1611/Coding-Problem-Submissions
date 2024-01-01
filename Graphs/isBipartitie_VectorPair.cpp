@@ -37,7 +37,7 @@ bool isBipartite(int V, vector<int> adj[])
                       //if already coloured with parent vertex color
                       //then bipartite graph is not possible
                     if (col[j] == c)
-                        return 0;
+                        return false;
                    
                       //if uncoloured
                     if (col[j] == -1) {
@@ -51,7 +51,7 @@ bool isBipartite(int V, vector<int> adj[])
     }
     //if all vertexes are coloured such that
       //no two connected vertex have same colours
-    return 1;
+    return true;
 }
  
  
