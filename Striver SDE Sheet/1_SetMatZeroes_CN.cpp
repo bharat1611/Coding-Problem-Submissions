@@ -12,20 +12,11 @@ vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
 			}
 		}
 	}
-	for(int i = 0 ; i < n; i++){
-            if(row[i] == 0){
-                for(int j = 0; j < m; j++){
-                    matrix[i][j] = 0;
-                }
-            }
-        }
-
-    for(int i = 0 ; i < m; i++){
-            if(col[i] == 0){
-                for(int j = 0; j < n; j++){
-                    matrix[j][i] = 0;
-                }
-            }
-        }
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j < m; j++){
+			if((row[i] == 0) or (col[j] == 0))
+				matrix[i][j] = 0;
+		}
+	}
 	return matrix;
 }
