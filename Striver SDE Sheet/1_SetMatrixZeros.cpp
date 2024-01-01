@@ -16,18 +16,10 @@ public:
                 }
             }
         }
-        for(int i = 0 ; i < m; i++){
-            if(row[i] == 0){
-                for(int j = 0; j < n; j++){
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                if(row[i] == 0 or col[j] == 0)
                     matrix[i][j] = 0;
-                }
-            }
-        }
-        for(int i = 0 ; i < n; i++){
-            if(col[i] == 0){
-                for(int j = 0; j < m; j++){
-                    matrix[j][i] = 0;
-                }
             }
         }
     }
