@@ -12,20 +12,12 @@ vector<int> nextGreaterPermutation(vector<int> &A) {
         reverse(A.begin(), A.end());
         return A;
     }
-
-    for(int i = ind + 1; i < A.size(); i++){
-        for(int j = ind + 1; j < A.size() - 1; j++){
-            if(A[j] > A[j + 1]){
-                swap(A[j], A[j + 1]);
-            }
-        }
-    }
-
-    for (int i = ind; i < A.size(); i++) {
+        for (int i = n - 1; i > ind; i--) {
         if (A[i] > A[ind]) {
             swap(A[i], A[ind]);
             break;
         }
     }
+    reverse(A.begin() + ind + 1, A.end());
     return A;
 }
