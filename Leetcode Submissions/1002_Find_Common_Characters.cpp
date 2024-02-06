@@ -5,7 +5,6 @@ public:
         
         for(char c : words[0])
             count[c - 'a']++;
-        
         for(int i = 1 ; i < words.size(); i++)
         {
             vector<int> arr(26, 0);
