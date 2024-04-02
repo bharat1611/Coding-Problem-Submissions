@@ -16,7 +16,6 @@ public:
                 start++;
             }
             count += (end - start + 1);
-        }
         return count;
     }
     int subarraysWithKDistinct(vector<int>& nums, int k) {
